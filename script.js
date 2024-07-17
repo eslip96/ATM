@@ -50,14 +50,14 @@ function withdrawMoney(amount) {
   }
 }
 
-function viewBalance() {
+function showBalance() {
   displayMessage(`Your balance is $${user1.balance}`);
 }
 
 function showDeposit() {
   const inputArea = document.getElementById("input-area");
   inputArea.innerHTML = `
-    <input type="number" id="depositAmount" placeholder="Enter deposit amount" />
+    <input type="number" id="depositAmount"/>
     <button onclick="handleDeposit()">Submit</button>
   `;
 }
@@ -74,7 +74,7 @@ function handleDeposit() {
 function showWithdraw() {
   const inputArea = document.getElementById("input-area");
   inputArea.innerHTML = `
-    <input type="number" id="withdrawAmount" placeholder="Enter withdrawal amount" />
+    <input type="number" id="withdrawAmount"/>
     <button onclick="handleWithdraw()">Submit</button>
   `;
 }

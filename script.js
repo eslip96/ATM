@@ -27,63 +27,74 @@ HAVE FUN
 */
 
 class Users {
-  constructor(balance = 0, deposit = 0, withdraw = 0) {
+  constructor(balance = 0) {
     this.balance = balance;
-    this.deposit = deposit;
-    this.withdraw = withdraw;
   }
 }
+
 const user1 = new Users();
-function depositMoney() {
-  const depositAmount = parseInt(prompt("How much Would you like to deposit?"));
-  user1.balance += depositAmount;
-  user1.deposit = depositAmount;
-  alert(`Deposit successful! Your balance is now $${user1.balance}`);
+
+function depositMoney(amount) {
+  user1.balance += amount;
+  user1.deposit = amount;
+  displayMessage(`Deposit successful! Your balance is now $${user1.balance}`);
 }
 
-function withdrawMoney() {
-  const withdrawAmount = parseInt(prompt("Enter withdrawel amount"));
-  if (withdrawAmount > user1.balance) {
-    alert("Insuffciant Funds. Please choose smaller amount");
+function withdrawMoney(amount) {
+  if (amount > user1.balance) {
+    displayMessage("Insuffciant Funds. Please choose smaller amount");
   } else {
-    user1.withdraw = withdrawAmount;
-    user1.balance -= withdrawAmount;
-    alert(`Withdraw succesful! Your balance is now $${user1.balance}`);
+    user1.withdraw = amount;
+    user1.balance -= amount;
+    displayMessage(`Withdraw succesful! Your balance is now $${user1.balance}`);
   }
 }
 
 function viewBalance() {
-  alert(`Your balance is $${user1.balance}`);
+  displayMessage(`Your balance is $${user1.balance}`);
 }
 
-function receiptMoney() {
-  alert(`Your new balance is: $${user1.balance}
-  Amount withdrawn this session: $${user1.withdraw}
-  Amount depsosited this session: $${user1.deposit}`);
+function showDeposit() {
+  const inputArea = document.getElementById("input-area");
+  inputArea.innerHTML = `
+    <input type="number" id="depositAmount" placeholder="Enter deposit amount" />
+    <button onclick="handleDeposit()">Submit</button>
+  `;
 }
 
-function menu() {
-  alert("Welcome to our Bank ATM!!!");
-  while (true) {
-    const choose = prompt(
-      "Please select an option:\n1) Deposit\n2) Withdraw\n3) View balance\n4) Exit"
-    );
-    switch (choose) {
-      case "1":
-        depositMoney();
-        break;
-      case "2":
-        withdrawMoney();
-        break;
-      case "3":
-        viewBalance();
-        break;
-      case "4":
-        receiptMoney();
-        alert("Have a wonderful day!");
-        return false;
-    }
+function handleDeposit() {
+  const depositAmount = document.getElementById("depositAmount").value;
+  if (depositAmount) {
+    depositMoney(Number(depositAmount));
+  } else {
+    displayMessage("Please enter a valid amount.");
   }
 }
 
-menu();
+function showWithdraw() {
+  const inputArea = document.getElementById("input-area");
+  inputArea.innerHTML = `
+    <input type="number" id="withdrawAmount" placeholder="Enter withdrawal amount" />
+    <button onclick="handleWithdraw()">Submit</button>
+  `;
+}
+
+function handleWithdraw() {
+  const withdrawAmount = document.getElementById("withdrawAmount").value;
+  if (withdrawAmount) {
+    withdrawMoney(Number(withdrawAmount));
+  } else {
+    displayMessage("Please enter a valid amount.");
+  }
+}
+
+function exit() {
+  const inputArea = document.getElementById("input-area");
+  inputArea.innerHTML = "";
+  displayMessage("Have a Wonderful Day!Come Again");
+}
+
+function displayMessage(message) {
+  const display = document.getElementById("display");
+  display.innerText = message;
+}

@@ -5,18 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevPipeline || ATM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <h1>HELLO WORLD ITS THE BANK OF DEVPIPELINE</h1>
+    <div class="nav-bar-container">
+      <h1>HELLO WORLD ITS THE BANK OF DEVPIPELINE</h1>
+    </div>
     <div class="button-container">
       <button onclick="showDeposit()">Deposit</button>
       <button onclick="showWithdraw()">Withdraw</button>
       <button onclick="showBalance()">View Balance</button>
       <button onclick="exit()">Exit</button>
     </div>
-    <div id="input-area"></div>
-    <div id="display"></div>
+    <div class="display-container">
+      <div id="input-area"></div>
+      <div id="display"></div>
+    </div>
+    <div class="footer">
+      <a href="/index.html">Home |</a>
+      <a href="/index.html">Contact |</a>
+      <a href="/index.html">General Terms of Use |</a>
+      <a href="/index.html">Online Access Agreement |</a>
+      <a href="/index.html">Report Fraud |</a>
+      <a href="/index.html">Site Map |</a>
+      <p>
+        1. You must be the primary account holder of an eligible Wells Fargo
+        consumer account with a FICO® Score available, and enrolled in Wells
+        Fargo Online®. Eligible Wells Fargo consumer accounts include deposit,
+        loan, and credit accounts, but other consumer accounts may also be
+        eligible. Contact Wells Fargo for details. Availability may be affected
+        by your mobile carrier’s coverage area. Your mobile carrier's message
+        and data rates may apply. Please note that the score provided under this
+        service is for educational purposes and may not be the score used by
+        Wells Fargo to make credit decisions. Wells Fargo looks at many factors
+        to determine your credit options; therefore, a specific FICO® Score or
+        Wells Fargo credit rating does not guarantee a specific loan rate,
+        approval of a loan, or an upgrade on a credit card. 2. Enrollment with
+        Zelle® through Wells Fargo Online® or Wells Fargo Business Online® is
+        required. Terms and conditions apply. U.S. checking or savings account
+        required to use Zelle®. Transactions between enrolled users typically
+        occur in minutes. For your protection, Zelle® should only be used for
+        sending money to friends, family, or others you trust. Neither Wells
+        Fargo nor Zelle® offers purchase protection for payments made with
+        Zelle® - for example, if you do not receive the item you paid for or the
+        item is not described or as you expected. The Request feature within
+        Zelle® is only available through Wells Fargo using a smartphone. Payment
+        requests to persons not already enrolled with Zelle® must be sent to an
+        email address. To send or receive money with a small business, both
+        parties must be enrolled with Zelle® directly through their financial
+        institution’s online or mobile banking experience. For more information,
+        view the Zelle® Transfer Service Addendum to the Wells Fargo Online
+        Access Agreement. Your mobile carrier's message and data rates may
+        apply. Account fees (e.g., monthly service, overdraft) may apply to
+        Wells Fargo account(s) with which you use Zelle®.
+      </p>
+    </div>
   </body>
   <script src="/script.js"></script>
 </html>

@@ -57,7 +57,7 @@ function showBalance() {
 function showDeposit() {
   const inputArea = document.getElementById("input-area");
   inputArea.innerHTML = `
-    <input type="number" id="depositAmount"/>
+    <input id="depositAmount" placeholder="Enter amount"/>
     <button onclick="handleDeposit()">Submit</button>
   `;
 }
@@ -74,7 +74,7 @@ function handleDeposit() {
 function showWithdraw() {
   const inputArea = document.getElementById("input-area");
   inputArea.innerHTML = `
-    <input type="number" id="withdrawAmount"/>
+    <input id="withdrawAmount"/>
     <button onclick="handleWithdraw()">Submit</button>
   `;
 }
